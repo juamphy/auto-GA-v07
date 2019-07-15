@@ -1,17 +1,26 @@
 package testingui.diplomadoumss.org.core;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import testingui.diplomadoumss.org.managepage.login.Login;
 import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class FirstExample {
+
+    public static WebDriver webDriver;
+
     public static void main(String[] args) {
 
         WebDriver webDriver = DriverManager.getInstance().getWebDriver();
         webDriver.get(PropertyAccesor.getInstance().getURL());
-        webDriver.quit();
+
+        //webDriver.get(PropertyAccesor.getInstance().getUserName());
+        //webDriver.get(PropertyAccesor.getInstance().getPassword());
+        //webDriver.quit();
     }
 
     public static void exampleMap(){

@@ -15,4 +15,7 @@ public class BasePage {
         this.webDriver = DriverManager.getInstance().getWebDriver();
         PageFactory.initElements(webDriver, this);
     }
+    public WebDriver getWebDriver(){
+        return webDriver;
+    }
 }
