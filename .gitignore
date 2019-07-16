@@ -37,3 +37,5 @@ bin/
 gradle/
 gradlew
 gradlew.bat
+chromedriver*
+geckodriver*
