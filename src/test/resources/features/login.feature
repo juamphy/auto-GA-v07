@@ -5,4 +5,6 @@ Feature: Validaciones de la pagina Login
     And set my credentials  on 'Login' page
 #    And Click 'Cars' link on 'Left Panel' Page
     And Click 'Hotels' link on 'Left Panel' Page
+    And Click 'AddButton'
+    And set data on 'CreateRoom' page
 

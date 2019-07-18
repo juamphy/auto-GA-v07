@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.manageevents.Event;
 import testingui.diplomadoumss.org.managepage.BasePage;
-import testingui.diplomadoumss.org.managepage.leftPanel.Hotels;
+import testingui.diplomadoumss.org.managepage.leftPanel.hotels.rooms.Hotels;
 
 public class Dashboard extends BasePage {
 
