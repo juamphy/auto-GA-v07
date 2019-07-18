@@ -1,9 +1,7 @@
 package testingui.diplomadoumss.org.core;
 
-import org.openqa.selenium.WebDriver;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.managepage.login.Login;
-import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,7 +12,6 @@ public class FirstExample {
         login.initBrowser();
         login.setCredentials();
         Dashboard dashboard = new Dashboard();
-        dashboard.clickCarsSelected();
 //        dashboard.clickCars();
     }
 
