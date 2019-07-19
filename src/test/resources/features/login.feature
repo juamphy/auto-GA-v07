@@ -1,10 +1,9 @@
-Feature: Validaciones de la pagina Login
+Feature: Validactiones de la pagina de Login
 
-  Scenario: Cargar pagina PHP Travels
-    Given I load PHP Travels
-    And set my credentials  on 'Login' page
-#    And Click 'Cars' link on 'Left Panel' Page
-    And Click 'Hotels' link on 'Left Panel' Page
-    And Click 'AddButton'
-    And set data on 'CreateRoom' page
-
+  Scenario: Cargar Pagina PHP Travels
+    Given I load PHP travels
+    And set my credencials  on 'Login' page
+    And click 'Cars' link on 'Left Panel' page
+    And click 'Rooms' link on 'Left Panel' page
+    And click 'Add' link on 'Rooms' page
+    And set fields on 'Add Rooms Modal ' on 'Rooms page'

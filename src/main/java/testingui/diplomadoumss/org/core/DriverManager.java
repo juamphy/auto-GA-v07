@@ -16,6 +16,7 @@ public class DriverManager {
     private WebDriverWait webDriverWait;
     private static final int IMPLICIT_TIME_WAIT = PropertyAccesor.getInstance().getImplicitTimeWait();
     private static final int EXPLICIT_TIME_WAIT = PropertyAccesor.getInstance().getExplicitTimeWait();
+
     public static DriverManager getInstance() {
         return ourInstance;
     }
@@ -24,6 +25,8 @@ public class DriverManager {
         BroserType browserType = BroserType.valueOf(PropertyAccesor.getInstance().getBrowser());
         Browser browser = DriverFactory.getInstance().getBrowser(browserType);
         webDriver =  browser.getWebDriver();
+        webDriver.manage().window().maximize();
+        restorePreviousTimeWait();
     }
 
     public WebDriver getWebDriver(){
