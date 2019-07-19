@@ -1,5 +1,6 @@
 Feature: Validaciones de la pagina Login
 
+#  Background: set login
   Scenario: Cargar pagina PHP Travels
     Given I load PHP Travels
     And set my credentials  on 'Login' page

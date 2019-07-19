@@ -7,7 +7,7 @@ import testingui.diplomadoumss.org.core.DriverManager;
 public class Event {
 
     public static void clickWebElement(WebElement element) {
-        //isWebElementClickable(element);
+        isWebElementClickable(element);
         element.click();
     }
 

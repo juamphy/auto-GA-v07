@@ -34,7 +34,7 @@ public class LoginStepDef {
 
     @And("^Click 'Hotels' link on 'Left Panel' Page$")
     public void clickHotelsLinkOnLeftPanelPage() {
-        hotels=dashboard.setterLeftPanel();
+        hotels = dashboard.clickExtrasLinksIntoHotelsOptions();
 
     }
 

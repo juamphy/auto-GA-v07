@@ -20,7 +20,7 @@ public class FirstExample {
         login.setCredentials();
 
         Dashboard dashboard = new Dashboard();
-        dashboard.setterLeftPanel();
+        dashboard.setLeftPanel();
     }
 
     public static void exampleMap(){
