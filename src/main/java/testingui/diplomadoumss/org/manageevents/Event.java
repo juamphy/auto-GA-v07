@@ -17,6 +17,15 @@ public class Event {
         element.sendKeys(value);
     }
 
+    public static void fillWebElement(WebElement element, String value){
+        isWebElementVisible(element);
+        element.clear();
+        element.sendKeys(value);
+    }
+
+
+
+
     public static void isWebElementVisible(WebElement element) {
         DriverManager.getInstance().getWebDriverWait().until(ExpectedConditions.visibilityOf(element));
     }
