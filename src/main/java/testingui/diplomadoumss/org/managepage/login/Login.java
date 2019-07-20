@@ -7,6 +7,7 @@ import testingui.diplomadoumss.org.managepage.BasePage;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.utilsfiles.PropertyAccesor;
 
+import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
 
 
 /**
@@ -28,6 +29,10 @@ public class Login extends BasePage {
     @FindBy(css = ".btn-primary.btn-block")
     private WebElement buttonLogin;
 
+    public Login() {
+//        isWebElementVisible(loginButton);
+        avoidToUse(2);
+    }
 
     public Login setEmail(String email){
         Event.fieldWebElement(emailTextField,email);

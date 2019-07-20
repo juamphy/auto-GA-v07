@@ -38,14 +38,22 @@ public class LoginStepDef {
 
     }
 
-    @And("^I press 'AddExtras' Page$")
-    public void iPressAddExtrasPage() {
+    @And("^I press 'PrintExtras ' Page$")
+    public void iPressPrintExtrasPage() {
         extras=dashboard.selectButtonPrint();
     }
 
-//    @And("^I press 'AddExtras' Page$")
-//    public void iPressAddExtrasPage() {
-//
+    @And("^I press 'ButtonAdd' page$")
+    public void iPressButtonAddPage() {
+        extras=dashboard.clickselectAdd();
+    }
+
+
+//    @And("^I press 'ExportExtras' Page$")
+//    public void iPressExportExtrasPage() {
+//        extras=dashboard.selectOptionAdd();
 //    }
+
+
 
 }

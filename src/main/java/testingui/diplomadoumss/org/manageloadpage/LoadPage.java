@@ -14,12 +14,4 @@ public class LoadPage {
         return new Login();
     }
 
-//    public static Dashboard loadPHPTravelsDashboard() {
-//        WebDriver webDriver = DriverManager.getInstance().getWebDriver();
-//        webDriver.get(PropertyAccesor.getInstance().getURL());
-//        Login login = new Login();
-//
-//        return login.setCredentials();
-//
-//    }
 }

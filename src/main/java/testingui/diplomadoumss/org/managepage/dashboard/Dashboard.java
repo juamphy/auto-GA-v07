@@ -16,6 +16,7 @@ public class Dashboard extends BasePage {
 
     @FindBy(xpath = "//*[@href='https://www.phptravels.net/admin-portal/admin/cars']")
     private WebElement clickCars;
+
     //////esto es para la accions del contenido de extras
 
 
@@ -40,7 +41,9 @@ public class Dashboard extends BasePage {
 
 ////////////////////Dasboard sleep/////
     public Dashboard(){
-        Event.avoidToUse(10000);
+
+        Event.avoidToUse(3);
+
     }
   //////////////esto es para acccion de hotel and submenu extras
 
@@ -60,10 +63,6 @@ public class Dashboard extends BasePage {
     }
 
 
-//    public Hotels setterLeftPanel(){
-//        return clickHotel();
-//
-//    }
     ////////////Esto es para el button cards y submenu
 
 
@@ -77,20 +76,39 @@ public class Dashboard extends BasePage {
         return  clickCarsSelected();
     }
 
-
-
-    ////////////// estos son para las acciones
-    public Extras clickCardPrint(){
+    ////////////// estos son para las acciones   extras print
+    public Extras clickExtrasPrint(){
         Event.clickWebElement(clickSelectPrint);
+
         return new Extras();
     }
     public Extras selectButtonPrint(){
-        return clickCardPrint();
+        Event.avoidToUse(1);
+
+        return clickExtrasPrint();
     }
 
-    public Extras ClickCardExport(){
+    /// esto es para el button save extras
+
+    public Extras selectAddButtonHotel(){
+        Event.clickWebElement(clickButtonAdd);
+        return new Extras();
+    }
+    public Extras clickselectAdd(){
+        Event.avoidToUse(1);
+        return selectAddButtonHotel();
+    }
+
+
+
+//////////////////esto es para el export csv
+    public Extras clickExtrasExport(){
         Event.clickWebElement(clickSelectExport);
         return new Extras();
+    }
+    public  Extras SelectButtonCsv(){
+        return clickExtrasExport();
+
     }
 
 }

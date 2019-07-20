@@ -12,7 +12,7 @@ public class Event {
     }
 
     public static void fieldWebElement(WebElement element, String value) {
-        //isWebElementVisible(element);
+        isWebElementVisible(element);
         element.clear();
         element.sendKeys(value);
     }
@@ -26,10 +26,10 @@ public class Event {
     }
 
     public static void avoidToUse(int seconds) {
-        try {
-            Thread.sleep(seconds);
-        } catch (Exception e) {
-
+        try{
+            Thread.sleep(seconds * 1000);
+        }catch (Exception e){
+            System.out.println(e.fillInStackTrace());
         }
     }
 }
