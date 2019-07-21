@@ -46,6 +46,25 @@ public class Dashboard extends BasePage {
     @FindBy(css="[class*='xcrud-action'][data-after*='list']")
     private WebElement buttonSaveReturn;
 
+    @FindBy(css="[class*='xcrud-action'][data-after*='edit']")
+    private WebElement buttonSaveEditExtras;
+
+    @FindBy(css="[class*='xcrud-action'][data-task*='list']")
+    private WebElement selectForReturnListExtras;
+
+    @FindBy(xpath = "//option[@value='No']")
+    private WebElement selecctValueOption;
+
+    @FindBy(xpath = "//option[@value='Yes']")
+    private WebElement selecctValueOptionYes;
+
+    @FindBy(xpath="//table/tbody/tr[1]//a[@data-task='edit']")
+    private WebElement selectEditExtras;
+
+    @FindBy(xpath = "//table/tbody/tr[1]//a[@data-task='view']")
+    private WebElement selectShowExtras;
+
+
     public Dashboard(){
 
         Event.avoidToUse(3);
@@ -55,15 +74,17 @@ public class Dashboard extends BasePage {
     public Extras fillTheFields(){
         Event.avoidToUse(1);
         System.out.println("llenar fields");
-        String name ="Pepito";
+        String name ="Wine Expensive";
         Random generate=new Random();
-        int result= (int)Math.random()*50+1;
+        int result= generate.nextInt(500);
+        result+=4;
         String res=Integer.toString(result);
         System.out.println(name);
         Event.fillWebElement(fieldName,name);
         Event.fillWebElement(fieldPrice,res);
         System.out.println(res);
-        Event.clickWebElement(fieldStatus);
+//        Event.clickWebElement(fieldStatus);
+        Event.clickWebElement(selecctValueOption);
         return new Extras();
     }
     public Extras ButtonSaveExtrasReturn(){
@@ -73,6 +94,37 @@ public class Dashboard extends BasePage {
         return new Extras();
     }
 
+    public Extras selectButtonEdit(){
+        Event.avoidToUse(3);
+        System.out.print("se ha editado los datos");
+        Event.clickWebElement(selectEditExtras);
+        return new Extras();
+    }
+    public Extras selectEditSaveExtras(){
+        Event.avoidToUse(2);
+        String namechange ="Sauvignon blanc wine";
+        Random generates=new Random();
+        int results= generates.nextInt(400);
+        results+=3;
+        String ress=Integer.toString(results);
+        Event.fillWebElement(fieldName,namechange);
+        Event.fillWebElement(fieldPrice,ress);
+        System.out.println(ress);
+//        Event.clickWebElement(fieldStatus);
+        Event.clickWebElement(selecctValueOptionYes);
+        Event.clickWebElement(buttonSaveEditExtras);
+        Event.avoidToUse(2);
+        Event.clickWebElement(selectForReturnListExtras);
+        return new Extras();
+
+    }
+    public Extras clickElementShowExtras(){
+        Event.avoidToUse(2);
+        Event.clickWebElement(selectShowExtras);
+        Event.avoidToUse(2);
+        Event.clickWebElement(selectForReturnListExtras);
+        return new Extras();
+    }
 
 
     public Dashboard clickHotelLink() {

@@ -8,6 +8,9 @@ Feature: Validaciones de la pagina Login
     And I press 'ButtonAdd' page
     And I validation of fields 'Add Extras' Page
     And I press 'SaveReturn' page
+    And I press 'EditButtonExtras' page
+    And I press 'EditSave' page
+    And I press 'ShowExtras' page
     And  I press 'PrintExtras ' Page
     And I press 'ExportExtras' Page
 

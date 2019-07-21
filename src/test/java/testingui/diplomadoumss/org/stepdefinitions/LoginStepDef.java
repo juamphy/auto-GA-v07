@@ -56,21 +56,31 @@ public class LoginStepDef {
             dashboard.ButtonSaveExtrasReturn();
     }
 
+
+    @And("^I press 'EditButtonExtras' page$")
+    public void iPressEditButtonExtrasPage() {
+        dashboard.selectButtonEdit();
+    }
+
+
     @And("^I press 'PrintExtras ' Page$")
     public void iPressPrintExtrasPage() {
             dashboard.clickExtrasPrint();
     }
 
+    @And("^I press 'EditSave' page$")
+    public void iPressEditSavePage() {
+        dashboard.selectEditSaveExtras();
+    }
+
+    @And("^I press 'ShowExtras' page$")
+    public void iPressShowExtrasPage() {
+        dashboard.clickElementShowExtras();
+    }
     @And("^I press 'ExportExtras' Page$")
     public void iPressExportExtrasPage() {
 
     }
-
-
-//    @And("^I press 'ExportExtras' Page$")
-//    public void iPressExportExtrasPage() {
-//        extras=dashboard.selectOptionAdd();
-//    }
 
 
 
