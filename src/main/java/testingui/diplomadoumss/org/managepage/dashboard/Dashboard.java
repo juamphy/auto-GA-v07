@@ -65,6 +65,8 @@ public class Dashboard extends BasePage {
     private WebElement selectShowExtras;
 
 
+
+
     public Dashboard(){
 
         Event.avoidToUse(3);
