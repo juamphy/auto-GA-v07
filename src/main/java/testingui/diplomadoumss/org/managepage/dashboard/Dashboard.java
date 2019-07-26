@@ -67,6 +67,7 @@ public class Dashboard extends BasePage {
 
 
 
+
     public Dashboard(){
 
         Event.avoidToUse(3);
