@@ -36,11 +36,11 @@ public class LoginStepDef {
 
     @And("^Click 'Hotels' link on 'Left Panel' Page$")
     public void clickHotelsLinkOnLeftPanelPage() {
-         dashboard.clickExtrasLinksIntoHotelsOptions();
+        dashboard.clickExtrasLinksIntoHotelsOptions();
 
     }
 
-   
+
     @And("^I press 'ButtonAdd' page$")
     public void iPressButtonAddPage() {
         dashboard.selectAddButtonHotel();
@@ -53,7 +53,7 @@ public class LoginStepDef {
 
     @And("^I press 'SaveReturn' page$")
     public void iPressSaveReturnPage() {
-            dashboard.ButtonSaveExtrasReturn();
+        dashboard.ButtonSaveExtrasReturn();
     }
 
 
@@ -65,7 +65,7 @@ public class LoginStepDef {
 
     @And("^I press 'PrintExtras ' Page$")
     public void iPressPrintExtrasPage() {
-            dashboard.clickExtrasPrint();
+        dashboard.clickExtrasPrint();
     }
 
     @And("^I press 'EditSave' page$")
@@ -83,5 +83,14 @@ public class LoginStepDef {
     }
 
 
+    @And("^I press 'Assign' page$")
+    public void iPressAssignPage() {
+        dashboard.selectActionAssign();
+    }
 
+    @And("^I press save 'UpdateAssign' page$")
+    public void iPressSaveUpdateAssignPage() {
+        dashboard.clickButtonUpdateOfAssign();
+
+    }
 }

@@ -11,6 +11,8 @@ Feature: Validaciones de la pagina Login
     And I press 'EditButtonExtras' page
     And I press 'EditSave' page
     And I press 'ShowExtras' page
+    And I press 'Assign' page
+    And I press save 'UpdateAssign' page
     And  I press 'PrintExtras ' Page
     And I press 'ExportExtras' Page
 

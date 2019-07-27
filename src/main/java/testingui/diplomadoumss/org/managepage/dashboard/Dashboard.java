@@ -1,5 +1,6 @@
 package testingui.diplomadoumss.org.managepage.dashboard;
 
+import com.google.common.eventbus.EventBus;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.manageevents.Event;
@@ -32,7 +33,7 @@ public class Dashboard extends BasePage {
     private WebElement clickSelectPrint;
 
 
-  @FindBy(css ="[class*='xcrud-action'][data-task*='create'] ")
+    @FindBy(css ="[class*='xcrud-action'][data-task*='create'] ")
     private WebElement clickButtonAdd;
 
     //    @FindBy(css="[data-type='text']")
@@ -64,14 +65,41 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//table/tbody/tr[1]//a[@data-task='view']")
     private WebElement selectShowExtras;
 
+    @FindBy(xpath = "//table/tbody/tr[1]//a[contains(text(),' Assign ')]")
+    private WebElement selectActionExtras;
+
+    @FindBy (xpath = "//*[@id='s2id_autogen1']")
+    private WebElement selectFieldAssign;
+
+    @FindBy(xpath="//ul//li/div[@class='select2-result-label' and contains(text(), 'Rose Rayhaan Rotana')]")
+    private WebElement selectOptionresult;
 
 
+
+    @FindBy(css ="#assign26 button.btn.btn-primary")
+    private WebElement clickButtonUpdateAssign;
+
+    //////input[@type='hidden' and @name='extrasid' and @value='25']//button[contains(text(),'Update')]
 
 
     public Dashboard(){
 
         Event.avoidToUse(3);
 
+    }
+    public Extras selectActionAssign(){
+//        Event.avoidToUse(2);
+        Event.clickWebElement(selectActionExtras);
+        return new Extras();
+    }
+
+    public Extras clickButtonUpdateOfAssign(){
+        Event.clickWebElement(selectFieldAssign);
+        Event.avoidToUse(2 );
+        Event.clickWebElement(selectOptionresult);
+        Event.avoidToUse(4);
+        Event.clickWebElement(clickButtonUpdateAssign);
+        return new Extras();
     }
 
     public Extras fillTheFields(){
@@ -171,7 +199,7 @@ public class Dashboard extends BasePage {
 
 
     public Dashboard clickExtrasPrint(){
-
+        Event.avoidToUse(2);
         Event.clickWebElement(clickSelectPrint);
         System.out.println("Verificar click extra");
         return this;
