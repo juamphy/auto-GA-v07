@@ -40,8 +40,24 @@ public class Rooms extends BasePage {
     @FindBy(xpath = "//input[@name='bedcharges']")
     private WebElement bedcharges;
 
-    @FindBy(xpath = "//form//div[@class='select2-search']//input[@class='select2-input']")
+    @FindBy(xpath = "//div[@class='col-md-6']//select//option[@value='107']")
+//    @FindBy(id = "s2id_autogen1")
     private WebElement selectTypeRoom;
+
+    @FindBy(xpath = "//div[@class='col-md-6']//select//option[@value='32']")
+    private WebElement selectHotel;
+
+    @FindBy(xpath = "//button[@id='add']")
+    private WebElement clickButtonAdd;
+
+    @FindBy(xpath = "//table//tbody//tr[1]//td[9]//a")
+    private WebElement clickUploadButton;
+
+    @FindBy(xpath = "//table//tr//th//a[@class='btn btn-success']")
+    private WebElement addButtonImage;
+
+    @FindBy(xpath = "//div[@id='UploadPhotos']//div//div[@class='modal-body']//div[@id='dropzone']")
+    private WebElement uploadImage;
 
     public Rooms() {
 //        isWebElementVisible(bookingLink);
@@ -55,8 +71,16 @@ public class Rooms extends BasePage {
         return this;
     }
 
+    public Rooms setAddRoomsFieldsEmpty(){
+        clickWebElement(clickButtonAdd);
+        return  this;
+    }
 
     public Rooms setAddRoomsFields(){
+        avoidToUse(10);
+        clickWebElement(selectTypeRoom);
+        avoidToUse(2);
+        clickWebElement(selectHotel);
         avoidToUse(2);
         int priceVal = (int)(Math.random()*10+1);
         String value= String.valueOf(priceVal);
@@ -67,7 +91,19 @@ public class Rooms extends BasePage {
         fillWebElement(children,value);
         fillWebElement(extrabeds,value);
         fillWebElement(bedcharges,value);
-       // fillWebElement(selectTypeRoom,"Triple Rooms");
+        avoidToUse(3);
+        clickWebElement(clickButtonAdd);
+        return this;
+    }
+
+    public Rooms setUploadButton(){
+        avoidToUse(10);
+        clickWebElement(clickUploadButton);
+        clickWebElement(addButtonImage);
+        avoidToUse(10);
+
+//       uploadImage.sendKeys("D://room1.jpg");
+        uploadImage.click();
         return this;
     }
 }

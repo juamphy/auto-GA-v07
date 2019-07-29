@@ -40,7 +40,9 @@ public class LoginStepDef {
 
     @And("^set fields on 'Add Rooms Modal ' on 'Rooms page'$")
     public void setFieldsOnAddRoomsModalOnRoomsPage() {
+        rooms.setAddRoomsFieldsEmpty();
         rooms.setAddRoomsFields();
+        rooms.setUploadButton();
     }
 
 }
