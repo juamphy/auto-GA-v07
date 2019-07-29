@@ -12,6 +12,7 @@ import testingui.diplomadoumss.org.managepage.hotel.Hotels;
 import java.security.PrivateKey;
 import java.util.Random;
 
+import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
 import static testingui.diplomadoumss.org.manageevents.Event.clickWebElement;
 
 public class Dashboard extends BasePage {
@@ -21,6 +22,7 @@ public class Dashboard extends BasePage {
     private WebElement clickCarsSelected;
 
     @FindBy(xpath = "//*[@href='https://www.phptravels.net/admin-portal/admin/cars']")
+//   @FindBy(xpath = "//ul[@id='social-sidebar-menu']//a[contains(., 'Cars') and @aria-expanded='false']")
     private WebElement clickCars;
 
     @FindBy(xpath = "//*[@href='#Hotels']")
@@ -97,9 +99,9 @@ public class Dashboard extends BasePage {
         Event.clickWebElement(selectFieldAssign);
         Event.avoidToUse(2 );
         Event.clickWebElement(selectOptionresult);
-        Event.avoidToUse(4);
+        Event.avoidToUse(3);
         Event.clickWebElement(clickButtonUpdateAssign);
-        return new Extras();
+         return new Extras();
     }
 
     public Extras fillTheFields(){
@@ -187,6 +189,7 @@ public class Dashboard extends BasePage {
 
 
     public Cars clickCarsSelected() {
+
         Event.clickWebElement(clickCarsSelected);
         Event.clickWebElement(clickCars);
         return new Cars();

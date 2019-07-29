@@ -14,7 +14,7 @@ public class FirstExample {
 //        WebDriver webDriver = DriverManager.getInstance().getWebDriver();
 //        webDriver.get(PropertyAccesor.getInstance().getURL());
 //        webDriver.quit();
-
+//
         Login login = new Login();
         login.initBrowser();
         login.setCredentials();
