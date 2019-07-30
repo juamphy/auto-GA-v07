@@ -20,35 +20,39 @@ public class LoginStepdefs {
         login = LoadPage.loadPPHPTravels();
     }
 
-    @And("^set my credencials  on 'Login' page$")
+    /*@And("^set my credencials  on 'Login' page$")
     public void setMyCredencialsOnLoginPage() throws Throwable {
         dashboard = login.setCredentials();
-    }
+    }*/
 
-    @And("^click 'Cars' link on 'Left Panel' page$")
-    public void clickCarsLinkOnLeftPanelPage() throws Throwable {
-        dashboard.clickCarsExpand();
-    }
-
-    @And("^click 'Hotels' link on 'Left Panel' page$")
-    public void clickHotelsLinkOnLeftPanelPage() throws Throwable {
-        dashboard.clickHotelsExpand();
-    }
-
-    @And("^click 'HotelsLi' link on 'Left Panel' page$")
-    public void clickHotelsLiLinkOnLeftPanelPage() throws Throwable {
-        dashboard.clickHotelsLi();
-    }
-
-    @And("^click 'AddHotel' link on 'Main Panel' page$")
-    public void clickAddHotelLinkOnMainPanelPage() throws Throwable {
-        dashboard.clickAddHotel();
-    }
+//    @And("^click 'Cars' link on 'Left Panel' page$")
+//    public void clickCarsLinkOnLeftPanelPage() throws Throwable {
+//        dashboard.clickCarsExpand();
+//    }
+//
+//    @And("^click 'Hotels' link on 'Left Panel' page$")
+//    public void clickHotelsLinkOnLeftPanelPage() throws Throwable {
+//        dashboard.clickHotelsExpand();
+//    }
+//
+//    @And("^click 'HotelsLi' link on 'Left Panel' page$")
+//    public void clickHotelsLiLinkOnLeftPanelPage() throws Throwable {
+//        dashboard.clickHotelsLi();
+//    }
+//
+//    @And("^click 'AddHotel' link on 'Main Panel' page$")
+//    public void clickAddHotelLinkOnMainPanelPage() throws Throwable {
+//        dashboard.clickAddHotel();
+//    }
 
 //    @And("^click 'SelectAll' link on 'Main Panel' page$")
 //    public void clickSelectAllLinkOnMainPanelPage() throws Throwable {
 //        dashboard.clickSelectAll();
 //    }
-
+    // quiz//click 'NASA API Listing' on Left Panel page Ft
+    @And("^click 'NASA' on 'Left Panel' page$")
+    public void clickNasaOnLeftPanelPage() throws Throwable {
+        dashboard.clickNasaApiListing();
+    }
 
 }

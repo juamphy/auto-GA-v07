@@ -31,32 +31,43 @@ public class Dashboard extends BasePage {
 
 //    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[2]/table/thead/tr/th[1]/div/ins")
 //    private WebElement checkboxList;
+     //Quiz//
+    @FindBy(xpath = "//a[contains(text(),'NASA API Listing')]")
+    private WebElement nasaApiListingExpand;
 
+
+    @FindBy(xpath = "//*[@id=\"tocify-header1\"]/li/a")
+    private WebElement nasaApiListingExpandLink;
 
     public Dashboard() {
 //        isWebElementVisible(bookingLink);
         avoidToUse(3);
     }
 
-    public Dashboard clickCarsExpand() {
-        clickWebElement(carsExpand);
-        return this;
-    }
-
-    public Dashboard clickHotelsExpand() {
-        clickWebElement(hotelsExpand);
-        return this;
-    }
-    public Dashboard clickHotelsLi() {
-        clickWebElement(hotelsLiExpand);
-        return this;
-    }
-    public Dashboard clickAddHotel() {
-        clickWebElement(addHotel);
-        return this;
-    }
+//    public Dashboard clickCarsExpand() {
+//        clickWebElement(carsExpand);
+//        return this;
+//    }
+//
+//    public Dashboard clickHotelsExpand() {
+//        clickWebElement(hotelsExpand);
+//        return this;
+//    }
+//    public Dashboard clickHotelsLi() {
+//        clickWebElement(hotelsLiExpand);
+//        return this;
+//    }
+//    public Dashboard clickAddHotel() {
+//        clickWebElement(addHotel);
+//        return this;
+//    }
 //    public Dashboard clickSelectAll() {
 //        clickWebElement(checkboxList);
 //        return this;
 //    }
+
+    public Dashboard clickNasaApiListing() {
+        clickWebElement(nasaApiListingExpand);
+        return this;
+    }
 }

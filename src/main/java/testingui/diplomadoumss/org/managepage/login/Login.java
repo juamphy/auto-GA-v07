@@ -29,24 +29,24 @@ public class Login extends BasePage {
         avoidToUse(2);
     }
 
-    public Login setEmail(String email){
-        fillWebElement(emailTextField, email);
-        return this;
-    }
-
-    public Login setPassword(String password){
-        fillWebElement(passwordTextField, password);
-        return this;
-    }
-
-    public Dashboard clickLoginButton() {
-        clickWebElement(loginButton);
-        return new Dashboard();
-    }
-
-    public Dashboard setCredentials() {
-        return setEmail(PropertyAccesor.getInstance().getEmail()).
-                setPassword(PropertyAccesor.getInstance().getPassword()).
-                clickLoginButton();
-    }
+//    public Login setEmail(String email){
+//        fillWebElement(emailTextField, email);
+//        return this;
+//    }
+//
+//    public Login setPassword(String password){
+//        fillWebElement(passwordTextField, password);
+//        return this;
+//    }
+//
+//    public Dashboard clickLoginButton() {
+//        clickWebElement(loginButton);
+//        return new Dashboard();
+//    }
+//
+//    public Dashboard setCredentials() {
+//        return setEmail(PropertyAccesor.getInstance().getEmail()).
+//                setPassword(PropertyAccesor.getInstance().getPassword()).
+//                clickLoginButton();
+//    }
 }
