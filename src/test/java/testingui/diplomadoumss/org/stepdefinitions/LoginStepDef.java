@@ -2,7 +2,8 @@ package testingui.diplomadoumss.org.stepdefinitions;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
-import testingui.diplomadoumss.org.manageloadpage.LoadPage;
+import testingui.diplomadoumss.org.manageloadpage.LoadPageNasa;
+import testingui.diplomadoumss.org.managepage.LoginNasa.LoginNasa;
 import testingui.diplomadoumss.org.managepage.hotels.Rooms;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.managepage.login.Login;
@@ -12,37 +13,37 @@ public class LoginStepDef {
     private Login login;
     private Dashboard dashboard;
     private Rooms rooms;
+    private LoginNasa log;
 
     @Given("^I load PHP travels$")
     public void iLoadPHPTravels() throws Throwable {
-        login = LoadPage.loadPPHPTravels();
+        log = LoadPageNasa.loadPageNasa();
     }
 
-    @And("^set my credencials  on 'Login' page$")
-    public void setMyCredencialsOnLoginPage() throws Throwable {
-        dashboard = login.setCredentials();
+
+    @And("^cargar 'LoginNasa' page$")
+    public void cargarLoginNasaPage() {
+        log = LoadPageNasa.loadPageNasa();
     }
 
-    @And("^click 'Cars' link on 'Left Panel' page$")
-    public void clickCarsLinkOnLeftPanelPage() throws Throwable {
-        dashboard.clickCarsExpand();
+
+    @And("^click 'NASA API Listing' link$")
+    public void clickNASAAPIListingLink() {
+        log.clickNasaApiLink();
     }
 
-    @And("^click 'Rooms' link on 'Left Panel' page$")
-    public void clickRoomsLinkOnLeftPanelPage() {
-        rooms = dashboard.clickHotelsExpand();
+    @And("^click 'NASA API Listing' segunda vez$")
+    public void clickNASAAPIListingSegundaVez() {
+        log.clickNasaApiLink2();
+        
     }
 
-    @And("^click 'Add' link on 'Rooms' page$")
-    public void clickAddLinkOnRoomsPage() {
-        rooms.clickRooms();
+    @And("^click 'Earth' panel izquierdo$")
+    public void clickEarthPanelIzquierdo() {
+        log.earthClickMenu();
     }
 
-    @And("^set fields on 'Add Rooms Modal ' on 'Rooms page'$")
-    public void setFieldsOnAddRoomsModalOnRoomsPage() {
-        rooms.setAddRoomsFieldsEmpty();
-        rooms.setAddRoomsFields();
-        rooms.setUploadButton();
+    @And("^click 'Imagery' panel izquierdo$")
+    public void clickImageryPanelIzquierdo() {
     }
-
 }
