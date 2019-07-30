@@ -13,10 +13,10 @@ import static testingui.diplomadoumss.org.manageevents.Event.*;
 
 public class Rooms extends BasePage {
 
-    @FindBy(xpath = "//*[@href='https://www.phptravels.net/admin-portal/admin/hotels/rooms']")
+    @FindBy(xpath = "//*[@href='https://www.phptravels.net/admin/tours']")
     private WebElement clickRooms;
 
-    @FindBy(xpath = "//button[@type='submit']")
+    @FindBy(xpath = "//form[@class='add_button']//button[@type='submit']")
     private WebElement addRooms;
 
     @FindBy(xpath = "//input[@name='basicprice']")
@@ -40,18 +40,18 @@ public class Rooms extends BasePage {
     @FindBy(xpath = "//input[@name='bedcharges']")
     private WebElement bedcharges;
 
-    @FindBy(xpath = "//div[@class='col-md-6']//select//option[@value='107']")
+    @FindBy(xpath = "//input[@name='tourname']")
 //    @FindBy(id = "s2id_autogen1")
-    private WebElement selectTypeRoom;
+    private WebElement addTourName;
 
-    @FindBy(xpath = "//div[@class='col-md-6']//select//option[@value='32']")
-    private WebElement selectHotel;
+    @FindBy(xpath = "//div[@class='row form-group']//select//option[@value='5']")
+    private WebElement stars;
 
-    @FindBy(xpath = "//button[@id='add']")
-    private WebElement clickButtonAdd;
+    @FindBy(xpath = "//input[@name='tourdays']")
+    private WebElement tourdays;
 
-    @FindBy(xpath = "//table//tbody//tr[1]//td[9]//a")
-    private WebElement clickUploadButton;
+    @FindBy(xpath = "//input[@name='tournights']")
+    private WebElement tournights;
 
     @FindBy(xpath = "//table//tr//th//a[@class='btn btn-success']")
     private WebElement addButtonImage;
@@ -67,43 +67,39 @@ public class Rooms extends BasePage {
     public Rooms clickRooms() {
         clickWebElement(clickRooms);
 //        avoidToUse(3);
+//        clickWebElement(addRooms);
+        return this;
+    }
+
+    public Rooms clickAddButton(){
         clickWebElement(addRooms);
         return this;
     }
 
-    public Rooms setAddRoomsFieldsEmpty(){
-        clickWebElement(clickButtonAdd);
-        return  this;
-    }
+//    public Rooms setAddRoomsFieldsEmpty(){
+//        clickWebElement(clickButtonAdd);
+//        return  this;
+//    }
 
     public Rooms setAddRoomsFields(){
         avoidToUse(10);
-        clickWebElement(selectTypeRoom);
+        fillWebElement(addTourName,"New Tour Example");
         avoidToUse(2);
-        clickWebElement(selectHotel);
+        clickWebElement(stars);
         avoidToUse(2);
-        int priceVal = (int)(Math.random()*10+1);
-        String value= String.valueOf(priceVal);
-        fillWebElement(price,value);
-        fillWebElement(quantity,value);
-        fillWebElement(minstay,value);
-        fillWebElement(adults,value);
-        fillWebElement(children,value);
-        fillWebElement(extrabeds,value);
-        fillWebElement(bedcharges,value);
-        avoidToUse(3);
-        clickWebElement(clickButtonAdd);
+        fillWebElement(tourdays,"3");
+        fillWebElement(tournights,"2");
         return this;
     }
 
-    public Rooms setUploadButton(){
-        avoidToUse(10);
-        clickWebElement(clickUploadButton);
-        clickWebElement(addButtonImage);
-        avoidToUse(10);
-
-//       uploadImage.sendKeys("D://room1.jpg");
-        uploadImage.click();
-        return this;
-    }
+//    public Rooms setUploadButton(){
+//        avoidToUse(10);
+//        clickWebElement(clickUploadButton);
+//        clickWebElement(addButtonImage);
+//        avoidToUse(10);
+//
+////       uploadImage.sendKeys("D://room1.jpg");
+//        uploadImage.click();
+//        return this;
+//    }
 }

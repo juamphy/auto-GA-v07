@@ -19,7 +19,7 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//ul[@id='social-sidebar-menu']//a[contains(., 'Cars') and @aria-expanded='false']")
     private WebElement carsExpand;
 
-    @FindBy(xpath = "//*[@href='#Hotels']")
+    @FindBy(xpath = "//*[@href='#Tours']")
     private WebElement hotelsExpand;
 
     public Dashboard() {

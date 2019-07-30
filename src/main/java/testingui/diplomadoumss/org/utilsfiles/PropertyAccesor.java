@@ -33,6 +33,11 @@ public class PropertyAccesor {
         return prop.getProperty("url");
     }
 
+    public String getURLBoard(){
+        return prop.getProperty("urlBoard");
+    }
+
+
     public String getBrowser(){
         return prop.getProperty("browser");
     }
