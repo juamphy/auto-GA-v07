@@ -79,7 +79,7 @@ public class LoginStepDef {
     }
     @And("^I press 'ExportExtras' Page$")
     public void iPressExportExtrasPage() {
-
+            dashboard.clickSelectExportCVS();
     }
 
 
@@ -93,4 +93,21 @@ public class LoginStepDef {
         dashboard.clickButtonUpdateOfAssign();
 
     }
+
+    @And("^I press 'FilterByName' Page$")
+    public void iPressFilterByNamePage() {
+    }
+
+    @And("^I press 'Translate' page$")
+    public void iPressTranslatePage() {
+        dashboard.selectActionTranslate();
+
+    }
+
+    @And("^I press 'Delete' Page$")
+    public void iPressDeletePage() {
+        dashboard.selectButtonDelete();
+
+    }
+
 }

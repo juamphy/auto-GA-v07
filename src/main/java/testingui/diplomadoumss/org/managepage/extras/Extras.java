@@ -9,8 +9,7 @@ import static testingui.diplomadoumss.org.manageevents.Event.clickWebElement;
 public class Extras extends BasePage {
 
 
-    @FindBy(css ="[class*='xcrud-in-new-window'][data-task*='csv'] ")
-    private WebElement clickSelectExport;
+
 
 
 

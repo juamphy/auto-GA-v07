@@ -13,9 +13,9 @@ Feature: Validaciones de la pagina Login
     And I press 'ShowExtras' page
     And I press 'Assign' page
     And I press save 'UpdateAssign' page
+    And I press 'Translate' page
+#    And I press 'Delete' Page
     And  I press 'PrintExtras ' Page
     And I press 'FilterByName' Page
-    And I press 'FilterByPrice' Page
-    And I press 'FilterByPrice' Page
     And I press 'ExportExtras' Page
 

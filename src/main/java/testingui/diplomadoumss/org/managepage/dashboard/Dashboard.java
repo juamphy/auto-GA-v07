@@ -21,14 +21,15 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//*[@href='#Cars']")
     private WebElement clickCarsSelected;
 
-    @FindBy(xpath = "//*[@href='https://www.phptravels.net/admin-portal/admin/cars']")
+   //@FindBy(xpath = "//*[@href='https://www.phptravels.net/admin-portal/admin/cars']")
+    @FindBy(xpath = "//*[@href='https://www.phptravels.net/admin/cars']")
 //   @FindBy(xpath = "//ul[@id='social-sidebar-menu']//a[contains(., 'Cars') and @aria-expanded='false']")
     private WebElement clickCars;
 
-    @FindBy(xpath = "//*[@href='#Hotels']")
+    @FindBy(xpath = "//*[@href='#Tours']")
     private WebElement clickSelectHotel;
 
-    @FindBy(xpath = "//*[@href='https://www.phptravels.net/admin-portal/admin/hotels/extras']")
+    @FindBy(xpath = "//*[@href='https://www.phptravels.net/admin/tours/extras']")
     private WebElement clickSelectExtras;
 
     @FindBy(css ="[class*='xcrud-in-new-window'][data-task*='print'] ")
@@ -73,13 +74,32 @@ public class Dashboard extends BasePage {
     @FindBy (xpath = "//*[@id='s2id_autogen1']")
     private WebElement selectFieldAssign;
 
-    @FindBy(xpath="//ul//li/div[@class='select2-result-label' and contains(text(), 'Rose Rayhaan Rotana')]")
+    @FindBy(xpath="//ul//li/div[@class='select2-result-label' and contains(text(),'Legoland Malaysia Day Pass')]")
     private WebElement selectOptionresult;
 
 
 
-    @FindBy(css ="#assign26 button.btn.btn-primary")
+    @FindBy(css ="#assign14 button.btn.btn-primary")
     private WebElement clickButtonUpdateAssign;
+
+    @FindBy(xpath = "//table/tbody/tr[1]//a[contains(text(),'Translate')]")
+    private WebElement selectActionTranslate;
+
+     //Excursiones a ciudad Paris
+    @FindBy(xpath="//*[@id='extra14']//input[@type='text' and @name='translated[es][title]']")
+    private WebElement selectFieldSpanish;
+
+    @FindBy(xpath="//*[@id='extra14']//input[@type='text' and @name='translated[ar][title]']")
+    private WebElement selectFieldArabia;
+
+    @FindBy(css = "#extra14 button.btn.btn-primary")
+    private WebElement selectUpdateButtonSpanish;
+
+    @FindBy(xpath = "//table/tbody/tr[1]//a[@data-task='remove']")
+    private WebElement clickButtonDelete;
+
+    @FindBy(css ="[class*='xcrud-in-new-window'][data-task*='csv'] ")
+    private WebElement clickSelectExportCsvPage;
 
     //////input[@type='hidden' and @name='extrasid' and @value='25']//button[contains(text(),'Update')]
 
@@ -89,6 +109,7 @@ public class Dashboard extends BasePage {
         Event.avoidToUse(3);
 
     }
+
     public Extras selectActionAssign(){
 //        Event.avoidToUse(2);
         Event.clickWebElement(selectActionExtras);
@@ -99,7 +120,7 @@ public class Dashboard extends BasePage {
         Event.clickWebElement(selectFieldAssign);
         Event.avoidToUse(2 );
         Event.clickWebElement(selectOptionresult);
-        Event.avoidToUse(3);
+        Event.avoidToUse(4);
         Event.clickWebElement(clickButtonUpdateAssign);
          return new Extras();
     }
@@ -107,7 +128,7 @@ public class Dashboard extends BasePage {
     public Extras fillTheFields(){
         Event.avoidToUse(1);
         System.out.println("llenar fields");
-        String name ="Wine Expensive";
+        String name ="Eiffel Tower Summit";
         Random generate=new Random();
         int result= generate.nextInt(500);
         result+=4;
@@ -135,7 +156,7 @@ public class Dashboard extends BasePage {
     }
     public Extras selectEditSaveExtras(){
         Event.avoidToUse(2);
-        String namechange ="Sauvignon blanc wine";
+        String namechange ="Paris City Tours";
         Random generates=new Random();
         int results= generates.nextInt(400);
         results+=3;
@@ -191,6 +212,7 @@ public class Dashboard extends BasePage {
     public Cars clickCarsSelected() {
 
         Event.clickWebElement(clickCarsSelected);
+        Event.avoidToUse(2);
         Event.clickWebElement(clickCars);
         return new Cars();
     }
@@ -208,5 +230,28 @@ public class Dashboard extends BasePage {
         return this;
     }
 
+    public Extras selectActionTranslate(){
+        Event.avoidToUse(1);
+        Event.clickWebElement(selectActionTranslate);
+        Event.avoidToUse(2);
+        String tsAribia="العودة تذاكر الطيران";
+        Event.fillWebElement(selectFieldArabia,tsAribia);
+        String tspanish="Excursiones a ciudad Paris";
+        Event.fillWebElement(selectFieldSpanish,tspanish);
+        Event.avoidToUse(1);
+        Event.clickWebElement(selectUpdateButtonSpanish);
+        return new Extras();
+    }
+    public Extras selectButtonDelete(){
+        Event.avoidToUse(1);
+        Event.clickWebElement(clickButtonDelete);
+        return new Extras() ;
+    }
 
+    public Extras clickSelectExportCVS(){
+        Event.avoidToUse(3);
+        Event.clickWebElement(clickSelectExportCsvPage);
+        return new Extras();
+
+    }
 }
