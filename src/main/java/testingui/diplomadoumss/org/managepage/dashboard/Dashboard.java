@@ -5,14 +5,22 @@ import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.manageevents.Event;
 import testingui.diplomadoumss.org.managepage.BasePage;
 import testingui.diplomadoumss.org.managepage.leftPanel.hotels.reviews.Hotels;
+import testingui.diplomadoumss.org.managepage.pagecomponents.ExportCSV;
+import testingui.diplomadoumss.org.managepage.pagecomponents.Printing;
 
 public class Dashboard extends BasePage {
 
-    @FindBy(xpath = "//*[@href='#Hotels']")
+    @FindBy(xpath = "//*[@href='#Tours']")
     private WebElement clickReviewsSelected;
 
-    @FindBy(xpath = "//*[@href='https://www.phptravels.net/admin-portal/admin/hotels/reviews']")
+    @FindBy(xpath = "//*[@href='https://www.phptravels.net/admin/tours/reviews']")
     private WebElement clickReviews;
+
+    @FindBy(xpath = "//a[contains(text(), 'Print')]")
+    private WebElement clickPrinting;
+
+    @FindBy(xpath = "//a[contains(text(), 'Export into CSV')]")
+    private WebElement clickExportCsv;
 
     public Dashboard(){
        Event.avoidToUse(5000);
@@ -26,6 +34,16 @@ public class Dashboard extends BasePage {
 
     public Hotels setLeftPanel() {
         return  clickReviews();
+    }
+
+    public Printing clickPrinting() {
+        Event.clickWebElement(clickPrinting);
+        return new Printing();
+    }
+
+    public ExportCSV clickExportCSV() {
+        Event.clickWebElement(clickExportCsv);
+        return new ExportCSV();
     }
 
 }
