@@ -15,7 +15,7 @@ Feature: Validaciones de la pagina Login
     And I press save 'UpdateAssign' page
     And I press 'Translate' page
     And I press 'Delete' Page
-    And  I press 'PrintExtras ' Page
     And I press 'FilterByName' Page
+    And  I press 'PrintExtras ' Page
     And I press 'ExportExtras' Page
 

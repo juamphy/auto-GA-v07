@@ -94,9 +94,7 @@ public class LoginStepDef {
 
     }
 
-    @And("^I press 'FilterByName' Page$")
-    public void iPressFilterByNamePage() {
-    }
+
 
     @And("^I press 'Translate' page$")
     public void iPressTranslatePage() {
@@ -110,4 +108,8 @@ public class LoginStepDef {
 
     }
 
+    @And("^I press 'FilterByName' Page$")
+    public void iPressFilterByNamePage() {
+        dashboard.filterByName();
+    }
 }

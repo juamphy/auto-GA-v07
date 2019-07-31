@@ -1,6 +1,7 @@
 package testingui.diplomadoumss.org.managepage.dashboard;
 
 import com.google.common.eventbus.EventBus;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -102,6 +103,28 @@ public class Dashboard extends BasePage {
     @FindBy(css ="[class*='xcrud-in-new-window'][data-task*='csv'] ")
     private WebElement clickSelectExportCsvPage;
 
+//////////////////search filter
+
+    @FindBy(xpath="//div//a[contains(text(),'Search')]")
+    private WebElement clickButtonSearch;
+
+    @FindBy(xpath="//*[@id='content']//span[1]/input")
+    private WebElement selectFieldSearch;
+
+    //Travel Insurance
+    @FindBy(xpath = "//*[@id='content']//select[2]")
+    private WebElement clickForDeploy;
+
+    @FindBy(xpath="//*[@id='content']//select//option[contains(text(),'Name')]")
+    private WebElement selectFilterByName;
+    //
+    @FindBy(xpath="//a[contains(text(),'Go')]")
+    private WebElement clickButtonGo;
+
+    @FindBy(xpath="//a[contains(text(),'Reset')]")
+    private WebElement clickButtonReset;
+
+
     //////input[@type='hidden' and @name='extrasid' and @value='25']//button[contains(text(),'Update')]
 
 
@@ -194,6 +217,7 @@ public class Dashboard extends BasePage {
     }
 
     public Hotels clickExtrasLinksIntoHotelsOptions(){
+
         return clickHotelLink().clickExtraLinkIntoHotelsOptions();
     }
 
@@ -228,6 +252,11 @@ public class Dashboard extends BasePage {
         Event.avoidToUse(2);
         Event.clickWebElement(clickSelectPrint);
         System.out.println("Verificar click extra");
+//        Event.avoidToUse(2);
+        //missing closet print
+        String handle=webDriver.getWindowHandle();
+//        webDriver.switchTo().window(handle);
+
         return this;
     }
 
@@ -252,9 +281,25 @@ public class Dashboard extends BasePage {
     }
 
     public Extras clickSelectExportCVS(){
-        Event.avoidToUse(3);
+        Event.avoidToUse(2);
         Event.clickWebElement(clickSelectExportCsvPage);
         return new Extras();
 
+    }
+    public Extras filterByName(){
+        Event.avoidToUse(1);
+        Event.clickWebElement(clickButtonSearch);
+        Event.avoidToUse(1);
+        String filldata="3 Nights Accomodatio";
+        Event.fillWebElement(selectFieldSearch,filldata);
+        Event.avoidToUse(1);
+        Event.clickWebElement(clickForDeploy);
+        Event.avoidToUse(1);
+        Event.clickWebElement(selectFilterByName);
+        Event.avoidToUse(1);
+        Event.clickWebElement(clickButtonGo);
+        Event.avoidToUse(4);
+        Event.clickWebElement(clickButtonReset);
+        return new Extras();
     }
 }

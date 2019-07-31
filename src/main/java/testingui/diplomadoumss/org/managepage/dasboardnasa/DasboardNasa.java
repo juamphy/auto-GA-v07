@@ -15,22 +15,20 @@ public class DasboardNasa  extends BasePage {
         //private WebElement loadPage;
         @FindBy(xpath="//li/a[contains(text(),'NASA API Listing')]")
          private WebElement selectClickNasaApi;
-        @FindBy(xpath="//*[@href='https://api.nasa.gov/api.html#authentication']")
+        @FindBy(xpath="//ul//li/a[contains(text(),'NASA API Listing')]']")
          private WebElement selectSecondclick;
         @FindBy(xpath="//li/a[contains(text(),'Earth')]")
         private WebElement selectEarth;
         @FindBy(xpath="//li/a[contains(text(),'Imagery')]")
         private WebElement selectImagery;
-//        @Find(xpath="//code[contains(text(),'')]")
+        // @Find(xpath="//code[contains(text(),'')]")
+        //private WebElement selectTextGet;
     public DasboardNasa(){
 
         Event.avoidToUse(3);
 
     }
     public DasboardNasa loadDashboardNasa(){
-//        Event.avoidToUse(3);
-//        Event.clickWebElement(loadPage);
-//        return this;
         WebDriver webDriver = DriverManager.getInstance().getWebDriver();
         webDriver.get(PropertyAccesor.getInstance().getURL());
         return new DasboardNasa();
