@@ -1,6 +1,7 @@
 package testingui.diplomadoumss.org.managepage.dashboard;
 
 import com.google.common.eventbus.EventBus;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.manageevents.Event;
@@ -245,6 +246,8 @@ public class Dashboard extends BasePage {
     public Extras selectButtonDelete(){
         Event.avoidToUse(1);
         Event.clickWebElement(clickButtonDelete);
+        Event.avoidToUse(1);
+        webDriver.switchTo().alert().accept();
         return new Extras() ;
     }
 
