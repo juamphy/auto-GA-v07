@@ -5,6 +5,8 @@ import static testingui.diplomadoumss.org.manageevents.Event.*;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.managepage.BasePage;
+import testingui.diplomadoumss.org.managepage.hotel.Hotel;
+import testingui.diplomadoumss.org.managepage.offer.ManageOffer;
 
 import javax.xml.xpath.XPath;
 
@@ -23,15 +25,8 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//ul[@id='social-sidebar-menu']//a[contains(., 'Hotels') and @aria-expanded='false']")
     private WebElement hotelsExpand;
 
-    @FindBy(xpath = "//*[@id=\"Hotels\"]/li[1]/a")
-    private WebElement hotelsLiExpand;
-
-    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/form/button")
-    private WebElement addHotel;
-
-//    @FindBy(xpath = "//*[@id=\"content\"]/div[2]/div[2]/div/div/div[1]/div[2]/table/thead/tr/th[1]/div/ins")
-//    private WebElement checkboxList;
-
+    @FindBy(xpath = "//*[@id=\"social-sidebar-menu\"]/li[13]/a")
+    private WebElement offersExpand;
 
     public Dashboard() {
 //        isWebElementVisible(bookingLink);
@@ -43,20 +38,15 @@ public class Dashboard extends BasePage {
         return this;
     }
 
-    public Dashboard clickHotelsExpand() {
+    public Hotel clickHotelsExpand() {  //hotels
+        avoidToUse(1);
         clickWebElement(hotelsExpand);
-        return this;
+        return new Hotel();
     }
-    public Dashboard clickHotelsLi() {
-        clickWebElement(hotelsLiExpand);
-        return this;
+
+    public ManageOffer clickOffersExpand() {  //offers
+        avoidToUse(1);
+        clickWebElement(offersExpand);
+        return new ManageOffer();
     }
-    public Dashboard clickAddHotel() {
-        clickWebElement(addHotel);
-        return this;
-    }
-//    public Dashboard clickSelectAll() {
-//        clickWebElement(checkboxList);
-//        return this;
-//    }
 }
