@@ -2,7 +2,8 @@ package testingui.diplomadoumss.org.stepsdefinitions;
 
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
-import testingui.diplomadoumss.org.manageloadpage.LoadPage;
+import testingui.diplomadoumss.org.core.InjectionContext;
+//import testingui.diplomadoumss.org.manageloadpage.LoadPage;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
 import testingui.diplomadoumss.org.managepage.hotel.Hotel;
 import testingui.diplomadoumss.org.managepage.login.Login;
@@ -13,11 +14,29 @@ import testingui.diplomadoumss.org.managepage.offer.ManageOffer;
  * @project testingui.diplomadoumss.org
  */
 public class LoginStepdefs {
-    private Login login;
+    /*private Login login;
     private Dashboard dashboard;
     private Hotel hotelin;
-    private ManageOffer offerton;
+    private ManageOffer offerton;*/
+    InjectionContext testContext;
+    Login login;
 
+    public LoginStepdefs(InjectionContext context) {
+        testContext = context;
+        login = testContext.getPageObjectManager().getHomePage();
+    }
+
+        @Given("^I load PHP travels$")
+        public void iLoadPHPTravels() throws Throwable {
+            login.loadPPHPTravels();
+        }
+
+        @And("^set my credencials  on 'Login' page$")
+        public void setMyCredencialsOnLoginPage() throws Throwable {
+            login.setCredentials();
+        }
+
+/*
     @Given("^I load PHP travels$")
     public void iLoadPHPTravels() throws Throwable {
         login = LoadPage.loadPPHPTravels();
@@ -94,4 +113,6 @@ public class LoginStepdefs {
     public void clickDeleteOffersButtonOnMainPanelPage() throws Throwable {
         offerton.clickDeleteButton();
     }
+
+ */
 }
