@@ -1,8 +1,10 @@
 package testingui.diplomadoumss.org.stepsdefinitions;
 
+import com.sun.tools.javac.util.Assert;
 import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import testingui.diplomadoumss.org.manageloadpage.LoadPage;
 import testingui.diplomadoumss.org.managepage.coupons.Coupons;
 import testingui.diplomadoumss.org.managepage.dashboard.Dashboard;
@@ -45,5 +47,18 @@ public class LoginStepdefs {
     @And("^set fields on 'Add Coupon Modal ' on 'Coupons page'$")
     public void setFieldsOnAddCouponModalOnCouponsPage() {
         coupons.setAddCouponFields();
+    }
+
+    @And("^set \"([^\"]*)\" title and \"([^\"]*)\" date$")
+    public void setTitleAndDate(String arg0, String arg1) throws Throwable {
+       //coupons.setAddCouponFields(arg0,arg1);
+
+           }
+
+    @Then("^Verify that \"([^\"]*)\" is created$")
+    public void verifyThatIsCreated(String arg0) throws Throwable {
+       String actual= "PageObject";
+       String expect=arg0;
+        throw new PendingException();
     }
 }
