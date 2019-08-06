@@ -1,8 +1,6 @@
 package testingui.diplomadoumss.org.managepage.dashboard;
 
-import com.google.common.eventbus.EventBus;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import testingui.diplomadoumss.org.manageevents.Event;
@@ -11,10 +9,9 @@ import testingui.diplomadoumss.org.managepage.extras.Extras;
 import testingui.diplomadoumss.org.managepage.leftPanel.Cars;
 import testingui.diplomadoumss.org.managepage.hotel.Hotels;
 
-import java.security.PrivateKey;
+
 import java.util.Random;
 
-import static testingui.diplomadoumss.org.manageevents.Event.avoidToUse;
 import static testingui.diplomadoumss.org.manageevents.Event.clickWebElement;
 
 public class Dashboard extends BasePage {
@@ -23,9 +20,7 @@ public class Dashboard extends BasePage {
     @FindBy(xpath = "//*[@href='#Cars']")
     private WebElement clickCarsSelected;
 
-   //@FindBy(xpath = "//*[@href='https://www.phptravels.net/admin-portal/admin/cars']")
     @FindBy(xpath = "//*[@href='https://www.phptravels.net/admin/cars']")
-//   @FindBy(xpath = "//ul[@id='social-sidebar-menu']//a[contains(., 'Cars') and @aria-expanded='false']")
     private WebElement clickCars;
 
     @FindBy(xpath = "//*[@href='#Tours']")
@@ -124,7 +119,8 @@ public class Dashboard extends BasePage {
     @FindBy(xpath="//a[contains(text(),'Reset')]")
     private WebElement clickButtonReset;
 
-
+    @FindBy(xpath="//*[@id=\"content\"]//table//thead//tr//th[6]")
+    private WebElement filterColumnnaPrice;
     //////input[@type='hidden' and @name='extrasid' and @value='25']//button[contains(text(),'Update')]
 
 
@@ -248,14 +244,13 @@ public class Dashboard extends BasePage {
 
 
 
-    public Dashboard clickExtrasPrint(){
+    public Dashboard clickExtrasPrint() {
         Event.avoidToUse(2);
         Event.clickWebElement(clickSelectPrint);
         System.out.println("Verificar click extra");
-//        Event.avoidToUse(2);
         //missing closet print
-        String handle=webDriver.getWindowHandle();
-//        webDriver.switchTo().window(handle);
+
+       // webDriver.switchTo().alert().dismiss();
 
         return this;
     }
@@ -302,4 +297,13 @@ public class Dashboard extends BasePage {
         Event.clickWebElement(clickButtonReset);
         return new Extras();
     }
+        public void  exitPage(){
+            webDriver.close();
+
+        }
+      public Extras  selectColumnaPrice(){
+              Event.avoidToUse(2);
+              Event.clickWebElement(filterColumnnaPrice);
+              return new Extras();
+      }
 }

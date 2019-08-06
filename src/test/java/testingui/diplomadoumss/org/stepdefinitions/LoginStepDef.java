@@ -8,6 +8,10 @@ import testingui.diplomadoumss.org.managepage.leftPanel.Cars;
 
 import testingui.diplomadoumss.org.managepage.hotel.Hotels;
 import testingui.diplomadoumss.org.managepage.login.Login;
+/**
+ * @author Johnny Peña Trujillo
+ * @project testingui.diplomadoumss.org
+ */
 
 public class LoginStepDef {
     private Login login;
@@ -111,5 +115,24 @@ public class LoginStepDef {
     @And("^I press 'FilterByName' Page$")
     public void iPressFilterByNamePage() {
         dashboard.filterByName();
+    }
+
+
+    @Given("^Dashboard home page$")
+    public void dashboardHomePage() {
+        System.out.println("dasboard container");
+    }
+
+
+    @Given("^And click 'Tours' link on 'Left Panel' Page$")
+    public void andClickToursLinkOnLeftPanelPage() {
+        dashboard.clickExtrasLinksIntoHotelsOptions();
+
+    }
+
+
+    @And("^I press filter columnas 'Price' pages$")
+    public void iPressFilterColumnasPricePages() {
+        dashboard.selectColumnaPrice();
     }
 }
